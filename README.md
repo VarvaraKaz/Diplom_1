@@ -1,24 +1,54 @@
-## Задание 1: Юнит-тесты
+# Stellar Burgers — QA Python Project
 
-### Автотесты для проверки программы, которая помогает заказать бургер в Stellar Burgers
+Учебный проект по тестированию Python-классов для системы заказа бургеров **Stellar Burgers**.
 
-### Реализованные сценарии
+В этом проекте реализована модель бургера с булками и ингредиентами, а также написаны юнит-тесты для класса `Burger`.
 
-Созданы юнит-тесты, покрывающие классы `Bun`, `Burger`, `Ingredient`, `Database`
+## Структура проекта
 
-Процент покрытия 100% (отчет: `htmlcov/index.html`)
+Diplom_1/
+├── praktikum/
+│ ├── init.py
+│ ├── burger.py 
+│ ├── bun.py 
+│ ├── ingredient.py 
+│ ├── ingredient_types.py
+│ ├── database.py
+│ └── praktikum.py 
+└── tests/
+└── test_burger.py
 
-### Структура проекта
 
-- `praktikum` - пакет, содержащий код программы
-- `tests` - пакет, содержащий тесты, разделенные по классам. Например, `bun_test.py`, `burger_test.py` и т.д.
+## Классы
 
-### Запуск автотестов
+### Burger
 
-**Установка зависимостей**
+- `set_buns(bun)` — устанавливает булку
+- `add_ingredient(ingredient)` — добавляет ингредиент
+- `remove_ingredient(index)` — удаляет ингредиент по индексу
+- `move_ingredient(index, new_index)` — перемещает ингредиент
+- `get_price()` — возвращает общую стоимость бургера
+- `get_receipt()` — возвращает строку с чеком бургера
 
-> `$ pip install -r requirements.txt`
+## Тесты
 
-**Запуск автотестов и создание HTML-отчета о покрытии**
+- Все тесты находятся в `tests/test_burger.py`
+- Используются:
+  - **pytest** для запуска
+  - **pytest-cov** для проверки покрытия
+  - **unittest.mock.Mock** для изоляции зависимостей
+  - **параметризация** для проверки разных кейсов цены
+- Покрыты **все методы класса `Burger`** → покрытие **100%**
 
->  `$ pytest --cov=praktikum --cov-report=html`
+## Установка и запуск
+
+1. Установить зависимости:
+
+```bash
+pip install pytest pytest-cov
+Запуск тестов с покрытием:
+cd /path/to/Diplom_1
+PYTHONPATH=. pytest --cov=praktikum
+Ожидаемый результат:
+tests/test_burger.py ........ [100%]
+TOTAL coverage for praktikum/burger.py: 100%

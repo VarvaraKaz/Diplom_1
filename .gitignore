@@ -1,0 +1,26 @@
+# Python кэш
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Виртуальная среда
+venv/
+env/
+.venv/
+
+# Файлы покрытия pytest
+htmlcov/
+.coverage
+.coverage.*
+
+# Логи и временные файлы
+*.log
+*.tmp
+
+# PyCharm / VSCode
+.idea/
+.vscode/
+
+# OS файлы
+.DS_Store
+Thumbs.db
